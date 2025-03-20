@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero';
+import BlogCard from '../components/BlogCard';
+import SocialCard from '../components/SocialCard.astro';
+import TagCloud from '../components/TagCloud.astro';
+---
+
+<Layout title="Portfolio - Full Stack Developer">
+  <Hero client:load />
+  
+  <div class="mt-20 grid lg:grid-cols-3 gap-8">
+    <div class="lg:col-span-2 space-y-8">
+      <h2 class="text-2xl font-bold">Recent Blog Posts</h2>
+      <div class="grid gap-8">
+        <BlogCard
+          title="Building Modern Web Applications"
+          date="2024-02-15"
+          excerpt="Exploring the latest trends and best practices in web development..."
+          thumbnail="/blog-1.jpg"
+          client:load
+        />
+        <BlogCard
+          title="The Future of JavaScript"
+          date="2024-02-10"
+          excerpt="What's next for JavaScript and how it will shape web development..."
+          thumbnail="/blog-2.jpg"
+          client:load
+        />
+      </div>
+    </div>
+    
+    <aside class="space-y-8">
+      <SocialCard />
+      <TagCloud />
+    </aside>
+  </div>
+</Layout>

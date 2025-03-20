@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard';
+
+const projects = [
+  {
+    title: "E-commerce Platform",
+    description: "A full-featured e-commerce platform built with React and Node.js, featuring real-time inventory management and secure payment processing.",
+    image: "/project-1.jpg",
+    technologies: ["React", "Node.js", "MongoDB"],
+    siteUrl: "https://example.com/ecommerce"
+  },
+  {
+    title: "Task Management App",
+    description: "A collaborative task management application with real-time updates, team chat, and project analytics.",
+    image: "/project-2.jpg",
+    technologies: ["Vue.js", "Firebase", "TypeScript"],
+    siteUrl: "https://example.com/taskapp"
+  },
+  {
+    title: "Weather Dashboard",
+    description: "An interactive weather dashboard providing real-time weather data and forecasts using multiple weather APIs.",
+    image: "/project-3.jpg",
+    technologies: ["React", "D3.js", "API"],
+    siteUrl: "https://example.com/weather"
+  }
+];
+---
+
+<Layout title="Projects - Full Stack Developer" description="Explore my portfolio of web development and software engineering projects">
+  <div class="py-12">
+    <div class="max-w-3xl mb-12">
+      <h1 class="text-4xl font-bold mb-4">My projects</h1>
+      <p class="text-text/80 text-lg">Discover some of the previous projects I have worked on.</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map(project => (
+        <ProjectCard {...project} client:load />
+      ))}
+    </div>
+  </div>
+</Layout>

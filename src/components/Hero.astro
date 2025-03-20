@@ -1,0 +1,49 @@
+---
+import { Image } from 'astro:assets';
+---
+
+<section class="min-h-[80vh] flex items-center">
+  <div class="grid md:grid-cols-2 gap-12 items-center">
+    <div class="space-y-6">
+      <h1 class="text-4xl md:text-5xl font-bold">
+        Full Stack Developer
+      </h1>
+      <p class="text-lg text-text/80">
+        With 3.5 years of experience crafting robust and scalable applications. Specialized in JavaScript, SQL, Python, and C#.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a
+          href="#contact"
+          class="inline-block px-6 py-3 bg-primary-purple hover:bg-primary-purple/90 text-white rounded-lg transition-colors"
+        >
+          Get in Touch
+        </a>
+        <a
+          href="/projects"
+          class="inline-block px-6 py-3 border border-primary-blue text-primary-blue hover:bg-primary-blue/10 rounded-lg transition-colors"
+        >
+          View Projects
+        </a>
+      </div>
+    </div>
+    
+    <div class="relative">
+      <div class="aspect-square rounded-full overflow-hidden border-4 border-primary-purple/20">
+        <img
+          src="/profile.jpg"
+          alt="Professional headshot"
+          class="w-full h-full object-cover"
+          width="400"
+          height="400"
+        />
+      </div>
+      <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-background/95 backdrop-blur-sm px-6 py-3 rounded-full border border-primary-purple/20">
+        <div class="flex gap-4">
+          {['JavaScript', 'SQL', 'Python', 'C#'].map(tech => (
+            <span class="text-sm font-medium">{tech}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,103 @@
+/* Styling for markdown content */
+.prose h1 {
+  font-size: 2.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.prose h2 {
+  font-size: 2rem;
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.prose h3 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.prose p {
+  margin-bottom: 1.2rem;
+}
+
+.prose a {
+  color: #0070f3;
+  text-decoration: underline;
+}
+
+.prose a:hover {
+  text-decoration: none;
+}
+
+/* Code blocks */
+.prose pre {
+  background-color: #f4f4f4;
+  border-radius: 0.3rem;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.prose code {
+  font-family: 'Consolas', 'Monaco', 'Andale Mono', monospace;
+  font-size: 0.9em;
+  background-color: #f0f0f0;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+
+.prose pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Lists */
+.prose ul, .prose ol {
+  padding-left: 2rem;
+  margin: 1rem 0;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+/* Blockquotes */
+.prose blockquote {
+  border-left: 4px solid #ddd;
+  padding-left: 1rem;
+  margin-left: 0;
+  font-style: italic;
+  color: #666;
+}
+
+/* Images */
+.prose img {
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem 0;
+}
+
+/* Tables */
+.prose table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+.prose th, .prose td {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+}
+
+.prose th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+/* Horizontal rule */
+.prose hr {
+  border: 0;
+  border-top: 1px solid #eee;
+  margin: 2rem 0;
+}

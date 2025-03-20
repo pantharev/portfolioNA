@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BlogCard from '../components/BlogCard';
+import TagCloud from '../components/TagCloud.astro';
+
+const blogs = [
+  {
+    title: "Building Modern Web Applications",
+    date: "2024-02-15",
+    excerpt: "Exploring the latest trends and best practices in web development, including modern frameworks, performance optimization, and user experience design.",
+    thumbnail: "/blog-1.jpg",
+    tags: ["Web Development", "React", "Performance"]
+  },
+  {
+    title: "The Future of JavaScript",
+    date: "2024-02-10",
+    excerpt: "What's next for JavaScript and how it will shape web development in the coming years. Exploring new features, tools, and best practices.",
+    thumbnail: "/blog-2.jpg",
+    tags: ["JavaScript", "Web Development", "Frontend"]
+  },
+  {
+    title: "Mastering Database Design",
+    date: "2024-02-05",
+    excerpt: "A comprehensive guide to designing efficient and scalable databases, covering normalization, indexing, and query optimization.",
+    thumbnail: "/blog-3.jpg",
+    tags: ["Database", "SQL", "Backend"]
+  },
+  {
+    title: "DevOps Best Practices",
+    date: "2024-01-30",
+    excerpt: "Essential DevOps practices for modern development teams, including CI/CD, containerization, and infrastructure as code.",
+    thumbnail: "/blog-4.jpg",
+    tags: ["DevOps", "CI/CD", "Docker"]
+  }
+];
+
+// Get unique tags from all blog posts
+const allTags = [...new Set(blogs.flatMap(blog => blog.tags))];
+---
+
+<Layout title="Blog Posts - Full Stack Developer" description="Read my articles about web development, programming, and software engineering">
+  <div class="py-12">
+    <div class="max-w-3xl mb-12">
+      <h1 class="text-4xl font-bold mb-4">All blog posts</h1>
+      <p class="text-text/80 text-lg">A collection of useful articles I have written over the years. You can select a specific post tag to filter posts for that topic.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-4 gap-8">
+      <div class="lg:col-span-3">
+        <div class="grid gap-8">
+          {blogs.map(blog => (
+            <BlogCard
+              title={blog.title}
+              date={blog.date}
+              excerpt={blog.excerpt}
+              thumbnail={blog.thumbnail}
+              client:load
+            />
+          ))}
+        </div>
+      </div>
+
+      <aside class="space-y-8">
+        <TagCloud />
+      </aside>
+    </div>
+  </div>
+</Layout>
