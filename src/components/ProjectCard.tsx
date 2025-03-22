@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { motion } from 'framer-motion';
 
 interface ProjectCardProps {
@@ -16,6 +16,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   technologies,
   siteUrl,
 }) => {
+
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const handleToggle = () => {
+    setIsExpanded(prev => !prev);
+  };
+
   return (
     <motion.article 
       className="bg-background border border-primary-purple/20 rounded-lg overflow-hidden group"
@@ -33,7 +40,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       </div>
       <div className="p-6">
         <h3 className="text-xl font-semibold mb-2">{title}</h3>
-        <p className="text-text/80 line-clamp-2 mb-4">{description}</p>
+        {isExpanded ? (
+          <p className="text-text/80 line-clamp-2 mb-4">{description}</p>
+        ) : (
+          <p>{description}</p>
+        )}
+        
+        <button onClick={handleToggle}>{isExpanded ? "Read More..." : "Read Less..."}</button>
         <div className="flex justify-between items-end">
           <div className="flex gap-2">
             {technologies.map((tech, index) => (
