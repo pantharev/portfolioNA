@@ -26,3 +26,6 @@ Welcome to my _new blog_ about learning Astro! Here, I will share my learning jo
 ## What's next
 
 I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
+
+
+Oh by the way, i'm making a gaming console system for kava basrs!! it will have rewards for kava and a leadreboard to keep the community engaged and keep them coming back for more!!! thanks for reading! see you next time, on the next episode of my life. :)!
